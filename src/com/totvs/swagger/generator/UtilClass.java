@@ -22,13 +22,10 @@ public class UtilClass {
 		String lineSeparator = System.getProperty("line.separator");
 
 		try {
-
 			while (scanner.hasNextLine()) {
 				fileContents.append(scanner.nextLine() + lineSeparator);
 			}
-
 			return fileContents.toString();
-
 		} finally {
 			scanner.close();
 		}
@@ -36,7 +33,6 @@ public class UtilClass {
 
 	public void gravaJsonGerado(String conteudoJson, String pathGravacaoParam, String nomeArquivo) throws IOException {
 		try {
-
 			String text = conteudoJson;
 			Path path = Paths.get(pathGravacaoParam, nomeArquivo + ".json");
 
@@ -44,13 +40,11 @@ public class UtilClass {
 			arquivoJson.createNewFile();
 
 			Files.write(path, Arrays.asList(text));
-
 		} catch (Exception e) {
 			throw e;
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public static String convertToJson(String yamlString) {
 		Yaml yaml = new Yaml();
 

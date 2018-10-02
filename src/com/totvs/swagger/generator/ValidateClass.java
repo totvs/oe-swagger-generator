@@ -16,19 +16,19 @@ public class ValidateClass {
 
 		// Verifica se existe a tag Program:
 		if (!arquivoYAML.contains("program:")) {
-			System.out.println("Não foi encontrada a chave de declaração do programa progress 'program:'.");
+			System.out.println("Nao foi encontrada a chave de declaracao do programa progress 'program:'.");
 			return false;
 		}
 
-		// Verifica se existe a tag Program:
+		// Verifica se existe a tag Procedure:
 		if (!arquivoYAML.contains("procedure:")) {
-			System.out.println("Não foi encontrada a declaração de procedures Progress");
+			System.out.println("Nao foi encontrada a declaracao de procedures Progress");
 			return false;
 		}
 
 		if (!this.contaProceduresMetodos(arquivoYAML)) {
 			System.out.println(
-					"O número de métodos estão diferente da quantidade de procedures decladaras no arqui YAML");
+					"O numero de metodos estao diferente da quantidade de procedures decladaras no arquivo YAML");
 			return false;
 		}
 
@@ -56,7 +56,7 @@ public class ValidateClass {
 				.listFiles((dir1, name) -> name.equals(nomeProgrmaProgressFinal));
 
 		if (fonteProgress.length == 0) {
-			System.out.println("Não foi encontrado o programa " + nomeProgramaProgress + ".");
+			System.out.println("Nao foi encontrado o programa " + nomeProgramaProgress + ".");
 			return false;
 		}
 
@@ -87,11 +87,10 @@ public class ValidateClass {
 		for (String procedure : listaString) {
 			if (!ProgramaProgressString.contains("PROCEDURE " + procedure.trim() + ":")) {
 				System.out.println(
-						"O arquivo Yaml e o fonte progress, não estão equalizados conferir declarações de procedures.");
+						"O arquivo Yaml e o fonte progress, nao estao equalizados conferir declaracoes de procedures.");
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -110,7 +109,5 @@ public class ValidateClass {
 			return true;
 		else
 			return false;
-
 	}
-
 }
